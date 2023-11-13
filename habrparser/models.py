@@ -13,7 +13,7 @@ class Hub(models.Model):
         super(__class__, self).save(*args, **kwargs)
 
         interval, _ = IntervalSchedule.objects.get_or_create(
-            every=self.period.second,
+            every=(self.period.hour * 60 + self.period.minute) * 60 + self.period.second,
             period="seconds",
         )
 
