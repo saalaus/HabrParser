@@ -36,7 +36,7 @@ services:
   celery:
     build: .
     restart: always
-    command: celery -A parser beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    command: celery -A parser worker --beat --scheduler django --loglevel=info
     volumes:
       - .:/app
     depends_on:

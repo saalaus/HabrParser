@@ -38,7 +38,7 @@ async def parse(html: str):
             [str(i) for i in soup.find(id="post-content-body").children],
         )
 
-        Article.objects.create(
+        await Article.objects.aupdate_or_create(
             title=title,
             link=link,
             date=time,
