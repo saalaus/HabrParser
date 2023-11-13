@@ -1,0 +1,119 @@
+[tool.poetry]
+name = "habrparser"
+version = "0.1.0"
+description = ""
+authors = ["saalaus <saalaus2@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.7"
+psycopg2 = "^2.9.9"
+aiohttp = "^3.8.6"
+beautifulsoup4 = "^4.12.2"
+celery = "^5.3.5"
+redis = "^5.0.1"
+celery-redbeat = "^2.1.1"
+django-celery-beat = "^2.5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+ruff = "^0.1.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 79
+exclude = [
+    "venv",
+    "alembic",
+    "tests",
+    "migrations",
+    "settings.py",
+    "manage.py",
+]
+ignore = [
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D103", # Missing docstring in function
+    "D104", # Missing docstring in public package
+    "D106", # Missing docstring in public nested
+    "D213", # multi-line-summary-second-line
+    "D203", # one-blank-line-before-class
+    "FBT001", # Boolean positional arg in function definition
+    "B008", # Do not perform function call `` in argument
+    "S311", # Standard pseudo-random generators are not suitable for cryptographic purposes
+    "INP001", # File `` is part of an implicit namespace package. Add an `__init__.py`
+    "A003", # Class attribute `` is shadowing a Python builtin
+    "D105", # Missing docstring in magic method
+    "ANN101", # Missing type annotation for `self` in method
+    "PT009", # Use a regular `assert` instead of unittest-style `assertEqual`
+    "ANN201", # Missing return type annotation for public function ``
+    "D102", # Missing docstring in public method
+    "FA100", # Missing `from __future__ import annotations`, but uses ``
+]
+select = [
+    "F",
+    "E",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "D",
+    "UP",
+    "YTT",
+    "ANN",
+    "ASYNC",
+    "S",
+    "BLE",
+    "FBT",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "T10",
+    "DJ",
+    "EM",
+    "EXE",
+    "FA",
+    "ISC",
+    "ICN",
+    "G",
+    "INP",
+    "PIE",
+    "T20",
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "PTH",
+    "TD",
+    "FIX",
+    "ERA",
+    "PD",
+    "PGH",
+    "PL",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "TRY",
+    "FLY",
+    "NPY",
+    "AIR",
+    "RUF",
+]
+
+[tool.black]
+line-length = 79
